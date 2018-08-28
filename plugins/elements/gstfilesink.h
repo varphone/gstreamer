@@ -25,6 +25,7 @@
 #define __GST_FILE_SINK_H__
 
 #include <stdio.h>
+#include <time.h>
 
 #include <gst/gst.h>
 #include <gst/base/gstbasesink.h>
@@ -83,6 +84,8 @@ struct _GstFileSink {
   gchar  *buffer;
 
   gboolean append;
+  gboolean mtime_as_crtime;
+  time_t time_at_open;
 };
 
 struct _GstFileSinkClass {
